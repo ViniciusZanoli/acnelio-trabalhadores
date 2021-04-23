@@ -1,5 +1,6 @@
 package com.viniciuszanoli.hrworker.resources;
 
+
 import com.viniciuszanoli.hrworker.entities.Worker;
 import com.viniciuszanoli.hrworker.repositories.WorkerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
