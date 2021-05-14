@@ -36,8 +36,8 @@ public class AutorizationServerConfig extends AuthorizationServerConfigurerAdapt
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-            .withClient("mayappname123")
-            .secret(passwordEncoder.encode("mayappsecret123"))
+            .withClient("myappname123")
+            .secret(passwordEncoder.encode("myappsecret123"))
             .scopes("read", "write")
             .authorizedGrantTypes("password")
             .accessTokenValiditySeconds(86400)
