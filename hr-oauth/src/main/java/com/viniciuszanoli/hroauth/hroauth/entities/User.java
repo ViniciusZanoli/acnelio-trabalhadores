@@ -54,15 +54,24 @@ public class User implements UserDetails, Serializable {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles.stream().map(x ->
                 new SimpleGrantedAuthority(x.getRoleName()))
                 .collect(Collectors.toList());
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     @Override
@@ -88,14 +97,6 @@ public class User implements UserDetails, Serializable {
     @Override
     public boolean isEnabled() {
         return true;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Set<Role> getRoles() {
-        return roles;
     }
 
     @Override
